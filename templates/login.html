@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Sign In</h1>
+  <form action="" method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign In</button>
+  </form>
+  <p>
+    New User?
+    <a href="{% url 'accounts:register' %}">Click to Register!</a>
+  </p>
+  <p>
+    Forgot Your Password?
+    <a href="{% url 'accounts:password_reset' %}">Click to Reset It</a>
+  </p>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load avatar %}
+
+{% block content %}
+  <table>
+    <tr>
+      <td><img src="{{ user_|avatar:128 }}"></td>
+      <td>
+        <h1>User: {{ user_.username }}</h1>
+        {% if user_.about_me %}<p>{{ user_.about_me }}</p>{% endif %}
+        {% if user_.last_seen %}<p>Last seen on: {{ user_.last_seen }}</p>{% endif %}
+        {% if user_ == user %}
+          <p><a href="{% url 'accounts:edit_profile' %}">Edit your profile</a></p>
+        {% elif not following %}
+          <form action="{% url 'accounts:follow' username=user_.username %}" method="post" novalidate>
+            {% csrf_token %}
+            <button type="submit">Follow</button>
+          </form>
+        {% else %}
+          <form action="{% url 'accounts:unfollow' username=user_.username %}" method="post" novalidate>
+            {% csrf_token %}
+            <button type="submit">Unfollow</button>
+          </form>
+        {% endif %}
+      </td>
+    </tr>
+  </table>
+  <hr>
+  {% for post in posts %}
+    {% include '_post.html' %}
+  {% endfor %}
+  {% if prev_url %}<a href="{{ prev_url }}">Newer Posts</a>{% endif %}
+  {% if next_url %}<a href="{{ next_url }}">Older Posts</a>{% endif %}
+{% endblock %}

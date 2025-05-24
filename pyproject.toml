@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "microblog"
+version = "0.1.0"
+description = ""
+authors = ["Straw Hat <mgwr285@microblog.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.7"
+dj-database-url = "^2.3.0"
+python-decouple = "^3.8"
+gunicorn = "^23.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+mypy = "^1.15.0"
+flake8 = "^7.1.2"
+django-stubs = "^5.1.3"
+bandit = "^1.8.3"
+safety = "^3.5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+disallow_untyped_defs = true
+disallow_any_unimported = true
+no_implicit_optional = true
+check_untyped_defs = true
+warn_return_any = true
+show_error_codes = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = ["decouple"]
+ignore_missing_imports = true
+
+[tool.django-stubs]
+django_settings_module = "project.settings"
+
+[tool.bandit]
+exclude_dirs = [".venv"]
