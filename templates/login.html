@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
+{% load django_bootstrap5 %}
+
 {% block content %}
   <h1>Sign In</h1>
   <form action="" method="post" novalidate>
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign In</button>
+    {% bootstrap_form form %}
+    {% bootstrap_button button_type="submit" content="Sign In" %}
   </form>
   <p>
     New User?

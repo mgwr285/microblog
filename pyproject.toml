@@ -12,6 +12,7 @@ django = "^5.1.7"
 dj-database-url = "^2.3.0"
 python-decouple = "^3.8"
 gunicorn = "^23.0.0"
+django-bootstrap5 = "^25.1"
 
 
 [tool.poetry.group.dev.dependencies]

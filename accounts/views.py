@@ -2,16 +2,28 @@ from typing import TYPE_CHECKING
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView as LoginView_
 from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import EditProfileForm, UserCreationForm
 from .models import User
 
 if TYPE_CHECKING:
+    from typing import Any
+
     from django.http import HttpRequest, HttpResponse
 
     class AuthenticatedHttpRequest(HttpRequest):
         user: User
+
+
+class LoginView(LoginView_):
+    def get(
+        self, request: "HttpRequest", *args: "Any", **kwargs: "Any"
+    ) -> "HttpResponse":
+        if request.GET.get("next"):
+            messages.info(request, "Please log in to access the page.")
+        return super().get(request, *args, **kwargs)
 
 
 def register(request: "HttpRequest") -> "HttpResponse":

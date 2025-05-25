@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_bootstrap5",
     "accounts",
     "blog",
 ]
@@ -125,6 +126,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -236,3 +251,18 @@ LOGGING = {
 
 
 POSTS_PER_PAGE = 25
+
+
+BOOTSTRAP5 = {
+    "css_url": {
+        "url": "/static/css/bootstrap.min.css",
+        "integrity": None,
+        "crossorigin": None,
+    },
+    "javascript_url": {
+        "url": "/static/js/bootstrap.bundle.min.js",
+        "integrity": None,
+        "crossorigin": None,
+    },
+    "theme_url": None,
+}

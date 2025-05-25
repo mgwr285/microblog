@@ -1,10 +1,12 @@
 from datetime import timedelta
 
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.utils import timezone
 
-from accounts.models import User
 from .models import Post
+
+User = get_user_model()
 
 
 class PostModelTest(TestCase):
