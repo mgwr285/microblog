@@ -2,6 +2,7 @@
 
 {% load django_bootstrap5 %}
 {% load avatar %}
+{% load dayjs %}
 
 {% block content %}
   <table class="table table-hover">
@@ -10,7 +11,7 @@
       <td>
         <h1>User: {{ user_.username }}</h1>
         {% if user_.about_me %}<p>{{ user_.about_me }}</p>{% endif %}
-        {% if user_.last_seen %}<p>Last seen on: {{ user_.last_seen }}</p>{% endif %}
+        {% if user_.last_seen %}<p>Last seen on: {% dayjs_format user.last_seen 'LLL' %}</p>{% endif %}
         {% if user_ == user %}
           <p><a href="{% url 'accounts:edit_profile' %}">Edit your profile</a></p>
         {% elif not following %}

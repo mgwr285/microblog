@@ -1,5 +1,6 @@
 {% load static %}
 {% load django_bootstrap5 %}
+{% load dayjs %}
 
 <!DOCTYPE html>
 <html>
@@ -56,6 +57,7 @@
     {% bootstrap_messages %}
     {% block content %}{% endblock %}
     {% bootstrap_javascript %}
+    {% include_dayjs %}
   </div>
 </body>
 </html>
