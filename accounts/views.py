@@ -34,7 +34,9 @@ def register(request: "HttpRequest") -> "HttpResponse":
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, _("Congratulations, you are now a registered user!"))
+            messages.success(
+                request, _("Congratulations, you are now a registered user!")
+            )
             return redirect("accounts:login")
     else:
         form = UserCreationForm()
@@ -52,7 +54,9 @@ def edit_profile(request: "AuthenticatedHttpRequest") -> "HttpResponse":
             return redirect("accounts:edit_profile")
     else:
         form = EditProfileForm(instance=user)
-    return render(request, "edit_profile.html", {"title": _("Edit Profile"), "form": form})
+    return render(
+        request, "edit_profile.html", {"title": _("Edit Profile"), "form": form}
+    )
 
 
 @login_required
@@ -64,7 +68,9 @@ def follow(request: "AuthenticatedHttpRequest", username: str) -> "HttpResponse"
         messages.warning(request, _("You cannot follow yourself!"))
     else:
         request.user.follow(user)
-        messages.success(request, _("You are now following %(username)s!") % {'username': username})
+        messages.success(
+            request, _("You are now following %(username)s!") % {"username": username}
+        )
     return redirect("blog:user", username=username)
 
 
@@ -77,5 +83,8 @@ def unfollow(request: "AuthenticatedHttpRequest", username: str) -> "HttpRespons
         messages.warning(request, _("You cannot unfollow yourself!"))
     else:
         request.user.unfollow(user)
-        messages.success(request, _("You are no longer following %(username)s.") % {'username': username})
+        messages.success(
+            request,
+            _("You are no longer following %(username)s.") % {"username": username},
+        )
     return redirect("blog:user", username=username)

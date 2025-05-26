@@ -16,7 +16,9 @@ class Post(models.Model):
     body = models.CharField(_("body"), max_length=140)
     timestamp = models.DateTimeField(_("timestamp"), default=timezone.now)
     author = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="posts",
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="posts",
         verbose_name=_("author"),
     )
 

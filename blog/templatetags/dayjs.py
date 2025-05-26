@@ -12,9 +12,9 @@ register = template.Library()
 
 @register.simple_tag
 def include_dayjs() -> str:
-    current_lang = get_language() or 'en'
-    dayjs_locale = current_lang.split('-')[0]
-    
+    current_lang = get_language() or "en"
+    dayjs_locale = current_lang.split("-")[0]
+
     return mark_safe(
         f"""
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js"></script>
