@@ -1,0 +1,330 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-26 19:56+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: accounts/models.py:9
+msgid "email address"
+msgstr "adresse e-mail"
+
+#: accounts/models.py:11
+msgid "Required. Enter a valid email address."
+msgstr "Requis. Saisissez une adresse e-mail valide."
+
+#: accounts/models.py:13
+msgid "A user with that email address already exists."
+msgstr "Un utilisateur avec cette adresse e-mail existe déjà."
+
+#: accounts/models.py:16
+msgid "about me"
+msgstr "à propos de moi"
+
+#: accounts/models.py:16
+msgid "Tell us a bit about yourself (optional)"
+msgstr "Parlez-nous un peu de vous (optionnel)"
+
+#: accounts/models.py:17
+msgid "last seen"
+msgstr "vu pour la dernière fois"
+
+#: accounts/models.py:19
+msgid "following"
+msgstr "abonnements"
+
+#: accounts/models.py:20
+msgid "Users that this user is following"
+msgstr "Utilisateurs que cet utilisateur suit"
+
+#: accounts/urls.py:14 templates/login.html:7 templates/login.html:11
+msgid "Sign In"
+msgstr "Se connecter"
+
+#: accounts/views.py:26
+msgid "Please log in to access the page."
+msgstr "Veuillez vous connecter pour accéder à la page."
+
+#: accounts/views.py:37
+msgid "Congratulations, you are now a registered user!"
+msgstr "Félicitations, vous êtes maintenant un utilisateur enregistré !"
+
+#: accounts/views.py:41 templates/base.html:47 templates/register.html:7
+#: templates/register.html:11
+msgid "Register"
+msgstr "S'inscrire"
+
+#: accounts/views.py:51
+msgid "Your changes have been saved"
+msgstr "Vos modifications ont été enregistrées"
+
+#: accounts/views.py:55 templates/edit_profile.html:7
+msgid "Edit Profile"
+msgstr "Modifier le profil"
+
+#: accounts/views.py:64
+msgid "You cannot follow yourself!"
+msgstr "Vous ne pouvez pas vous suivre vous-même !"
+
+#: accounts/views.py:67
+#, python-format
+msgid "You are now following %(username)s!"
+msgstr "Vous suivez maintenant %(username)s !"
+
+#: accounts/views.py:77
+msgid "You cannot unfollow yourself!"
+msgstr "Vous ne pouvez pas vous désabonner de vous-même !"
+
+#: accounts/views.py:80
+#, python-format
+msgid "You are no longer following %(username)s."
+msgstr "Vous ne suivez plus %(username)s."
+
+#: blog/forms.py:15
+msgid "Say something"
+msgstr "Dites quelque chose"
+
+#: blog/models.py:16
+msgid "body"
+msgstr "contenu"
+
+#: blog/models.py:17
+msgid "timestamp"
+msgstr "horodatage"
+
+#: blog/models.py:20
+msgid "author"
+msgstr "auteur"
+
+#: blog/models.py:25
+msgid "Post"
+msgstr "Publication"
+
+#: blog/models.py:26
+msgid "Posts"
+msgstr "Publications"
+
+#: blog/views.py:35
+msgid "Your post is now live!"
+msgstr "Votre publication est maintenant en ligne !"
+
+#: blog/views.py:59 templates/base.html:28
+msgid "Home"
+msgstr "Accueil"
+
+#: blog/views.py:90 templates/base.html:31
+msgid "Explore"
+msgstr "Explorer"
+
+#: project/settings.py:122
+msgid "English"
+msgstr "Anglais"
+
+#: project/settings.py:123
+msgid "Spanish"
+msgstr "Espagnol"
+
+#: project/settings.py:124
+msgid "French"
+msgstr "Français"
+
+#: templates/404.html:6
+msgid "File Not Found"
+msgstr "Fichier introuvable"
+
+#: templates/404.html:7 templates/500.html:8
+msgid "Back"
+msgstr "Retour"
+
+#: templates/500.html:6
+msgid "An unexpected error has occurred"
+msgstr "Une erreur inattendue s'est produite"
+
+#: templates/500.html:7
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "L'administrateur a été notifié. Désolé pour la gêne occasionnée !"
+
+#: templates/_post.html:16
+msgid "said"
+msgstr "a dit"
+
+#: templates/base.html:15
+msgid "Welcome to Microblog!"
+msgstr "Bienvenue sur Microblog !"
+
+#: templates/base.html:22
+msgid "Toggle navigation"
+msgstr "Basculer la navigation"
+
+#: templates/base.html:37
+msgid "Profile"
+msgstr "Profil"
+
+#: templates/base.html:43
+msgid "Logout"
+msgstr "Se déconnecter"
+
+#: templates/base.html:50
+msgid "Login"
+msgstr "Se connecter"
+
+#: templates/edit_profile.html:11 templates/index.html:12
+msgid "Submit"
+msgstr "Envoyer"
+
+#: templates/email/password_reset.html:6
+#, python-format
+msgid "Dear %(username)s,"
+msgstr "Cher %(username)s,"
+
+#: templates/email/password_reset.html:8
+msgid "To reset your password,"
+msgstr "Pour réinitialiser votre mot de passe,"
+
+#: templates/email/password_reset.html:10
+msgid "click here"
+msgstr "cliquez ici"
+
+#: templates/email/password_reset.html:13
+msgid ""
+"Alternatively, you can paste the following link in your browser's address "
+"bar:"
+msgstr ""
+"Alternativement, vous pouvez coller le lien suivant dans la barre d'adresse "
+"de votre navigateur :"
+
+#: templates/email/password_reset.html:15 templates/email/password_reset.txt:7
+msgid "If you have not requested a password reset simply ignore this message."
+msgstr ""
+"Si vous n'avez pas demandé de réinitialisation de mot de passe, ignorez "
+"simplement ce message."
+
+#: templates/email/password_reset.html:16 templates/email/password_reset.txt:9
+msgid "Sincerely,"
+msgstr "Cordialement,"
+
+#: templates/email/password_reset.html:17 templates/email/password_reset.txt:10
+msgid "The Microblog Team"
+msgstr "L'équipe Microblog"
+
+#: templates/email/password_reset.txt:3
+#, python-format
+msgid "Dear %(username)s"
+msgstr "Cher %(username)s"
+
+#: templates/email/password_reset.txt:5
+msgid "To reset your password click on the following link:"
+msgstr "Pour réinitialiser votre mot de passe, cliquez sur le lien suivant :"
+
+#: templates/email/password_reset_subject.txt:2
+msgid "[Microblog] Reset Your Password"
+msgstr "[Microblog] Réinitialisez votre mot de passe"
+
+#: templates/index.html:7
+#, python-format
+msgid "Hi, %(username)s!"
+msgstr "Salut, %(username)s !"
+
+#: templates/index.html:18 templates/user.html:35
+msgid "Post navigation"
+msgstr "Navigation des publications"
+
+#: templates/index.html:22 templates/user.html:39
+msgid "Newer posts"
+msgstr "Publications plus récentes"
+
+#: templates/index.html:27 templates/user.html:44
+msgid "Older posts"
+msgstr "Publications plus anciennes"
+
+#: templates/login.html:14
+msgid "New User?"
+msgstr "Nouvel utilisateur ?"
+
+#: templates/login.html:15
+msgid "Click to Register!"
+msgstr "Cliquez pour vous inscrire !"
+
+#: templates/login.html:18
+msgid "Forgot Your Password?"
+msgstr "Mot de passe oublié ?"
+
+#: templates/login.html:19
+msgid "Click to Reset It"
+msgstr "Cliquez pour le réinitialiser"
+
+#: templates/password_reset.html:7 templates/password_reset_complete.html:6
+#: templates/password_reset_confirm.html:7 templates/password_reset_done.html:6
+msgid "Reset Password"
+msgstr "Réinitialiser le mot de passe"
+
+#: templates/password_reset.html:11
+msgid "Request Password Reset"
+msgstr "Demander la réinitialisation du mot de passe"
+
+#: templates/password_reset_complete.html:8
+msgid ""
+"You have successfully changed your password! You may now proceed to log in."
+msgstr ""
+"Vous avez changé votre mot de passe avec succès ! Vous pouvez maintenant "
+"vous connecter."
+
+#: templates/password_reset_complete.html:10
+#: templates/password_reset_done.html:10
+msgid "Return to Sign In"
+msgstr "Retour à la connexion"
+
+#: templates/password_reset_confirm.html:12
+msgid "Change Password"
+msgstr "Changer le mot de passe"
+
+#: templates/password_reset_confirm.html:15
+msgid ""
+"It looks like you clicked on an invalid password reset link. Please try "
+"again."
+msgstr ""
+"Il semble que vous ayez cliqué sur un lien de réinitialisation de mot de "
+"passe invalide. Veuillez réessayer."
+
+#: templates/password_reset_done.html:8
+msgid ""
+"Check your email for a link to reset your password. If it doesn't appear "
+"within a few minutes, check your spam folder."
+msgstr ""
+"Vérifiez votre e-mail pour un lien de réinitialisation de votre mot de "
+"passe. S'il n'apparaît pas dans quelques minutes, vérifiez votre dossier "
+"spam."
+
+#: templates/user.html:13
+#, python-format
+msgid "User: %(username)s"
+msgstr "Utilisateur : %(username)s"
+
+#: templates/user.html:15
+msgid "Last seen on:"
+msgstr "Vu pour la dernière fois le :"
+
+#: templates/user.html:17
+msgid "Edit your profile"
+msgstr "Modifier votre profil"
+
+#: templates/user.html:21
+msgid "Follow"
+msgstr "Suivre"
+
+#: templates/user.html:26
+msgid "Unfollow"
+msgstr "Ne plus suivre"

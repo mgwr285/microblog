@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
+{% load i18n %}
 {% load django_bootstrap5 %}
 
 {% block content %}
-  <h1>Edit Profile</h1>
+  <h1>{% trans "Edit Profile" %}</h1>
   <form action="" method="post" novalidate>
     {% csrf_token %}
     {% bootstrap_form form %}
-    {% bootstrap_button button_type="submit" content="Submit" %}
+    {% bootstrap_button button_type="submit" content=_("Submit") %}
   </form>
 {% endblock %}

@@ -1,5 +1,6 @@
 from django.contrib.auth import views as auth_views
 from django.urls import path, reverse_lazy
+from django.utils.translation import gettext_lazy as _
 
 from . import views
 
@@ -10,7 +11,7 @@ urlpatterns = [
         views.LoginView.as_view(
             template_name="login.html",
             redirect_authenticated_user=True,
-            extra_context={"title": "Sign In"},
+            extra_context={"title": _("Sign In")},
         ),
         name="login",
     ),
@@ -30,7 +31,6 @@ urlpatterns = [
         "password/reset/done/",
         auth_views.PasswordResetDoneView.as_view(
             template_name="password_reset_done.html",
-            extra_context={"title": "Reset Password"},
         ),
         name="password_reset_done",
     ),

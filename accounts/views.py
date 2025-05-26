@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView as LoginView_
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils.translation import gettext as _
 
 from .forms import EditProfileForm, UserCreationForm
 from .models import User
@@ -22,7 +23,7 @@ class LoginView(LoginView_):
         self, request: "HttpRequest", *args: "Any", **kwargs: "Any"
     ) -> "HttpResponse":
         if request.GET.get("next"):
-            messages.info(request, "Please log in to access the page.")
+            messages.info(request, _("Please log in to access the page."))
         return super().get(request, *args, **kwargs)
 
 
@@ -33,11 +34,11 @@ def register(request: "HttpRequest") -> "HttpResponse":
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Congratulations, you are now a registered user!")
+            messages.success(request, _("Congratulations, you are now a registered user!"))
             return redirect("accounts:login")
     else:
         form = UserCreationForm()
-    return render(request, "register.html", {"title": "Register", "form": form})
+    return render(request, "register.html", {"title": _("Register"), "form": form})
 
 
 @login_required
@@ -47,11 +48,11 @@ def edit_profile(request: "AuthenticatedHttpRequest") -> "HttpResponse":
         form = EditProfileForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
-            messages.success(request, "Your changes have been saved")
+            messages.success(request, _("Your changes have been saved"))
             return redirect("accounts:edit_profile")
     else:
         form = EditProfileForm(instance=user)
-    return render(request, "edit_profile.html", {"title": "Edit Profile", "form": form})
+    return render(request, "edit_profile.html", {"title": _("Edit Profile"), "form": form})
 
 
 @login_required
@@ -60,10 +61,10 @@ def follow(request: "AuthenticatedHttpRequest", username: str) -> "HttpResponse"
         return redirect("blog:index")
     user = get_object_or_404(User, username=username)
     if user == request.user:
-        messages.warning(request, "You cannot follow yourself!")
+        messages.warning(request, _("You cannot follow yourself!"))
     else:
         request.user.follow(user)
-        messages.success(request, f"You are now following {username}!")
+        messages.success(request, _("You are now following %(username)s!") % {'username': username})
     return redirect("blog:user", username=username)
 
 
@@ -73,8 +74,8 @@ def unfollow(request: "AuthenticatedHttpRequest", username: str) -> "HttpRespons
         return redirect("blog:index")
     user = get_object_or_404(User, username=username)
     if user == request.user:
-        messages.warning(request, "You cannot unfollow yourself!")
+        messages.warning(request, _("You cannot unfollow yourself!"))
     else:
         request.user.unfollow(user)
-        messages.success(request, f"You are no longer following {username}.")
+        messages.success(request, _("You are no longer following %(username)s.") % {'username': username})
     return redirect("blog:user", username=username)

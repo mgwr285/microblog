@@ -1,20 +1,21 @@
 {% extends "base.html" %}
 
+{% load i18n %}
 {% load django_bootstrap5 %}
 
 {% block content %}
-  <h1>Sign In</h1>
+  <h1>{% trans "Sign In" %}</h1>
   <form action="" method="post" novalidate>
     {% csrf_token %}
     {% bootstrap_form form %}
-    {% bootstrap_button button_type="submit" content="Sign In" %}
+    {% bootstrap_button button_type="submit" content=_("Sign In") %}
   </form>
   <p>
-    New User?
-    <a href="{% url 'accounts:register' %}">Click to Register!</a>
+    {% trans "New User?" %}
+    <a href="{% url 'accounts:register' %}">{% trans "Click to Register!" %}</a>
   </p>
   <p>
-    Forgot Your Password?
-    <a href="{% url 'accounts:password_reset' %}">Click to Reset It</a>
+    {% trans "Forgot Your Password?" %}
+    <a href="{% url 'accounts:password_reset' %}">{% trans "Click to Reset It" %}</a>
   </p>
 {% endblock %}

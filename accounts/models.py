@@ -13,10 +13,11 @@ class User(AbstractUser):
             "unique": _("A user with that email address already exists."),
         },
     )
-    about_me = models.CharField(max_length=140, blank=True)
-    last_seen = models.DateTimeField(default=timezone.now)
+    about_me = models.CharField(_("about me"), max_length=140, blank=True, help_text=_("Tell us a bit about yourself (optional)"))
+    last_seen = models.DateTimeField(_("last seen"), default=timezone.now)
     following = models.ManyToManyField(
-        "self", symmetrical=False, related_name="followers"
+        "self", symmetrical=False, related_name="followers", verbose_name=_("following"),
+        help_text=_("Users that this user is following"),
     )
 
     def is_following(self, user: "User") -> bool:

@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+from django.utils.translation import gettext as _
 
 from .forms import PostForm
 from .models import Post
@@ -31,7 +32,7 @@ def index(request: "AuthenticatedHttpRequest") -> "HttpResponse":
             post = form.save(commit=False)
             post.author = request.user
             post.save()
-            messages.success(request, "Your post is now live!")
+            messages.success(request, _("Your post is now live!"))
             return redirect("blog:index")
     else:
         form = PostForm()
@@ -55,7 +56,7 @@ def index(request: "AuthenticatedHttpRequest") -> "HttpResponse":
         request,
         "index.html",
         {
-            "title": "Home",
+            "title": _("Home"),
             "form": form,
             "posts": posts,
             "prev_url": prev_url,
@@ -86,7 +87,7 @@ def explore(request: "AuthenticatedHttpRequest") -> "HttpResponse":
         request,
         "index.html",
         {
-            "title": "Explore",
+            "title": _("Explore"),
             "posts": posts,
             "prev_url": prev_url,
             "next_url": next_url,

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
+{% load i18n %}
+
 {% block content %}
-  <h1>An unexpected error has occurred</h1>
-  <p>The administrator has been notified. Sorry for the inconvenience!</p>
-  <p><a href="{% url 'blog:index' %}">Back</a></p>
+  <h1>{% trans "An unexpected error has occurred" %}</h1>
+  <p>{% trans "The administrator has been notified. Sorry for the inconvenience!" %}</p>
+  <p><a href="{% url 'blog:index' %}">{% trans "Back" %}</a></p>
 {% endblock %}

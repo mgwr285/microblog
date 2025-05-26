@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 from .models import Post
 
@@ -11,5 +12,5 @@ class PostForm(forms.ModelForm):
             "body": forms.Textarea(attrs={"rows": 4, "cols": 32}),
         }
         labels = {
-            "body": "Say something",
+            "body": _("Say something"),
         }
